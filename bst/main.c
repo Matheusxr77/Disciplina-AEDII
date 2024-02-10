@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 void main (int argc, char * argv[]) {
-    // Inicializa uma árvore vazia
+    // Inicializa uma árvore vazia 
     arvore tree = NULL;
 
     // Variáveis para opções do usuário

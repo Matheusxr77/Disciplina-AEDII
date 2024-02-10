@@ -1,7 +1,7 @@
 #ifndef RB_H
 #define RB_H
 
-enum cor {
+enum Cor {
     VERMELHO,
     PRETO,
     DUPLO_PRETO,
@@ -14,7 +14,7 @@ typedef struct no {
     struct no *esquerda;
     struct no *direita;
     struct no *pai;
-    enum cor cor;
+    enum Cor cor;
 } no;
 
 typedef no* arvore;
@@ -24,7 +24,7 @@ int ehFilhoEsquerdo (arvore elemento);
 int ehFilhoDireito (arvore elemento);
 arvore irmao (arvore elemento);
 arvore tio (arvore elemento);
-enum cor cor (arvore elemento);
+enum Cor cor (arvore elemento);
 void inicializar (arvore *raiz);
 arvore inserir (arvore *raiz, int valor);
 void ajustar (arvore *raiz, arvore elemento);   

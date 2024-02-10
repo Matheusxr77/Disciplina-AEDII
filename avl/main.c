@@ -20,7 +20,7 @@ int main (int argc, char* argv[]) {
     printf("1. Sim\n");
     printf("2. Nao\n");
     scanf("%d", &escolha);
-if (escolha > 2 || escolha < 1) {
+    if (escolha > 2 || escolha < 1) {
         printf("Opcao inválida, tente novamente\n");
     }
 

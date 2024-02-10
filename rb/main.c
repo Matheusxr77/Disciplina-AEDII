@@ -13,7 +13,7 @@ int main (int argc, char* argv[]) {
     printf("Preencha a arvore: \n");
     printf("Primeiro valor: ");
     scanf("%d", &valor);
-    tree = inserir(tree, valor);
+    tree = inserir(&tree, valor); // Corrigido
 
     // Pergunta se o usuário deseja inserir mais números na árvore
     printf("Deseja inserir outro numero na arvore?\n");
@@ -28,7 +28,7 @@ int main (int argc, char* argv[]) {
     while (escolha != 2) {
         printf("Insira um numero na arvore: ");
         scanf("%d", &valor);
-        tree = inserir(tree, valor); 
+        tree = inserir(&tree, valor); // Corrigido
         
         printf("Deseja inserir outro numero na arvore?\n");
         printf("1. Sim\n");
@@ -50,17 +50,8 @@ int main (int argc, char* argv[]) {
     printf("2. PREORDER \n");
     printf("3. INORDER \n");
     printf("4. POSORDER \n");
-    printf("5. REVERSO \n");
-    printf("6. QUANTIDADE DE NUMEROS PARES \n");
-    printf("7. ANTECESSOR \n");
-    printf("8. PAI \n");
-    printf("9. REMOVER \n");
-    printf("10. SOMA DOS NUMEROS PARES \n");
-    printf("11. PODAR \n");
-    printf("12. DOBRO \n");
-    printf("13. BUSCA \n");
-    printf("14. DESCENDENTES \n");
-    printf("15. ALTURA \n");
+    printf("5. REMOVER \n");
+    printf("6. BUSCA \n");
     printf("99. SAIR \n");
     printf("=======================================\n");
 
@@ -75,117 +66,46 @@ int main (int argc, char* argv[]) {
             // Opção para inserir um novo elemento na árvore
             printf("Digite o numero para ser inserido: ");
             scanf("%d", &numero);
-            inserir(tree, numero);
+            tree = inserir(&tree, numero); // Corrigido
             printf("\nEscolha outra opcao: ");
             scanf("%d", &opcao);
             break;
 
         case 2:
             // Opção para exibir a árvore em pré-ordem
-            preorder(tree);
+            preOrder(tree);
             printf("\nEscolha outra opcao: ");
             scanf("%d", &opcao);
             break;
         
         case 3:
             // Opção para exibir a árvore em ordem
-            inorder(tree);
+            inOrder(tree);
             printf("\nEscolha outra opcao: ");
             scanf("%d", &opcao);
             break;
         
         case 4:
             // Opção para exibir a árvore em pós-ordem
-            posorder(tree);
+            posOrder(tree);
             printf("\nEscolha outra opcao: ");
             scanf("%d", &opcao);
             break;
 
         case 5:
-            // Opção para exibir a árvore em ordem reversa
-            reverso(tree);
-            printf("\nEscolha outra opcao: ");
-            scanf("%d", &opcao);
-            break;
-        
-        case 6:
-            // Opção para exibir a quantidade de números pares
-            printf("Quantidade de numeros pares: %d\n", quantidadePar(tree));
-            printf("Escolha outra opcao: ");
-            scanf("%d", &opcao);
-            break;
-
-        case 7:
-            // Opção para descobrir o antecessor de algum número
-            printf("De qual valor deseja descobrir o antecessor? ");
-            scanf("%d", &numero);
-            printf("Antecessor: %d\n", antecessor(tree, numero));
-            printf("Escolha outra opcao: ");
-            scanf("%d", &opcao);
-            break;
-
-        case 8:
-            // Opção para descober o pai de algum número
-            printf("De qual valor deseja descobrir o pai? ");
-            scanf("%d", &numero);
-            pai(tree, numero);
-            printf("\nEscolha outra opcao: ");
-            scanf("%d", &opcao);
-            break;
-
-        case 9:
             // Opção para remover um elemento da árvore
             printf("Qual elemento que deseja remover? ");
             scanf("%d", &numero);
-            remover(tree, numero);
+            remover(numero, &tree); // Corrigido
             printf("Escolha outra opcao: ");
             scanf("%d", &opcao);
             break;
 
-        case 10:
-            // Opção para realizar a soma dos números pares
-            printf("Soma de todos os numeros pares: %d\n", somaPar(tree));
-            printf("Escolha outra opcao: ");
-            scanf("%d", &opcao);
-            break;
-
-        case 11:
-            // Opção para podar elementos
-            printf("Qual elemento deseja podar? ");
-            scanf("%d", &numero);
-            podar(tree, numero);
-            printf("Escolha outra opcao: ");
-            scanf("%d", &opcao);
-            break;
-
-        case 12:
-            // Opção para dobrar os elementos da árvore
-            dobro(tree);
-            printf("Escolha outra opcao: ");
-            scanf("%d", &opcao);
-            break;
-
-        case 13:
+        case 6:
             // Opção de buscar um determinado valor na árvore
             printf("Qual valor deseja buscar? ");
             scanf("%d", &numero);
-            printf("%d\n", busca(tree, numero));
-            printf("Escolha outra opcao: ");
-            scanf("%d", &opcao);
-            break;
-
-        case 14:
-            // Opção para descobrir o descendente de um número
-            printf("De qual elemento deseja descobrir os descendentes? ");
-            scanf("%d", &numero);
-            descendentes(tree, numero);
-            printf("\nEscolha outra opcao: ");
-            scanf("%d", &opcao);
-            break;
-
-        case 15:
-            // Opção para calcular a altura da árvore
-            printf("%d\n", altura(tree));
+            printf("%d\n", busca(numero, tree)); // Corrigido
             printf("Escolha outra opcao: ");
             scanf("%d", &opcao);
             break;

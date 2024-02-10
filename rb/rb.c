@@ -46,8 +46,8 @@ arvore tio (arvore elemento) {
 }
 
 // Função para retornar a cor do no
-enum cor cor (arvore elemento) {
-    enum cor c;
+enum Cor cor (arvore elemento) {
+    enum Cor c;
 
     if (elemento == NULL) {
         c = PRETO;
